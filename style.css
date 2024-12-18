@@ -1,0 +1,245 @@
+body {
+    background-color: rgb(103, 101, 108); /* Soft beige background */
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Softer background overlay */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal content */
+.modal-content {
+    color: rgb(80, 60, 50); /* Rich brown */
+    border: solid 2px rgb(210, 180, 160); /* Nude tones for the border */
+    background-color: rgb(255, 248, 240); /* Light nude background */
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.modal-content input, 
+.modal-content textarea {
+    width: 100%;
+    border-radius: 6px;
+    padding: 5px;
+    border: solid 2px rgb(210, 180, 160); /* Subtle border */
+    background-color: rgb(240, 235, 230); /* Light beige */
+    color: rgb(60, 50, 40); /* Darker text for readability */
+}
+
+.modal-content textarea {
+    resize: none;
+}
+
+.modal-content button {
+    border: none;
+    background-color: transparent;
+    border: solid 2px rgb(210, 180, 160); /* Button border */
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: rgb(80, 60, 50); /* Button text color */
+    cursor: pointer;
+}
+
+/* Close button */
+.close-button {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(150, 100, 90);
+}
+
+#add-post-button {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    border: none;
+    border: solid 2px rgb(210, 180, 160);
+    background-color: transparent;
+    color: rgb(80, 60, 50);
+    cursor: pointer;
+}
+
+#add-post-button i {
+    position: relative;
+    top: 1px;
+}
+
+/* Main Page Styles */
+.main-page {
+    width: calc(100% - 400px);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 200px;
+}
+
+.page-title {
+    color: rgb(120, 100, 90); /* Warm brown */
+    font-size: clamp(1rem, 8vw, 2.5rem);
+    margin: 0;
+}
+
+.page-posts {
+    font-size: clamp(1rem, 5vw, 1.8rem);
+    margin: 0;
+    color: rgb(120, 100, 90);
+}
+
+#post-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.post {
+    background-color: rgb(255, 250, 240); /* Very light nude */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    border: solid 2px rgb(210, 180, 160);
+    border-radius: 10px;
+}
+
+.post div:nth-of-type(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.post h2 {
+    color: rgb(80, 60, 50); /* Soft brown */
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    padding: 0;
+    margin: 0;
+}
+
+.post p {
+    color: rgb(120, 100, 90); /* Lighter brown */
+    padding: 0;
+    margin: 0;
+    font-size: clamp(0.9rem, 5vw, 1rem);
+}
+
+.button-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+}
+
+.button-con button:nth-of-type(1) {
+    border: none;
+    background-color: transparent;
+    border: solid 2px rgb(180, 150, 130); /* Muted tone for edit */
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: rgb(80, 60, 50);
+    cursor: pointer;
+}
+
+.button-con button:nth-of-type(2) {
+    border: none;
+    background-color: transparent;
+    border: solid 2px rgb(230, 80, 50); /* More vibrant for delete */
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: rgb(230, 80, 50);
+    cursor: pointer;
+}
+
+/* Animated Text */
+.hello {
+    display: inline;
+    font-weight: bold;
+    color: rgb(120, 100, 90);
+}
+
+.guhit {
+    position: relative;
+    top: -2px;
+    font-weight: bold;
+    color: rgb(210, 180, 160);
+    animation: flicker 1s infinite;
+}
+
+.by {
+    font-weight: bold;
+    color: rgb(210, 180, 160);
+}
+
+#success-message {
+    text-align: center;
+    color: rgb(80, 60, 50);
+}
+
+/* Flicker Animation */
+@keyframes flicker {
+    0%, 50% {
+        opacity: 1;
+    }
+    25%, 75% {
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1000px) {
+    .main-page {
+        width: calc(100% - 200px);
+        padding: 0 100px;
+    }
+    .post {
+        flex-direction: column;
+    }
+    .button-con {
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main-page {
+        width: calc(100% - 100px);
+        padding: 0 50px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .main-page {
+        width: calc(100% - 50px);
+        padding: 0 25px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main-page {
+        width: calc(100% - 30px);
+        padding: 0 15px;
+    }
+}
